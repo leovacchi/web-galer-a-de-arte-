@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const gallery = document.getElementById("gallery");
 
     function renderGallery() {
+        console.log('se ejecuta la function renderGallery')
         gallery.innerHTML = "";
         const artworks = JSON.parse(localStorage.getItem("artworks")) || [];
 
@@ -20,6 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
     renderGallery();
 
     document.body.addEventListener("click", function (event) {
+        console.log('se detecta un click')
+
         if (event.target.classList.contains("add-artwork-btn")) {
             const image = prompt("Ingrese la URL de la imagen:");
             if (image) {
