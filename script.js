@@ -21,15 +21,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     renderGallery();
 
-    document.body.addEventListener("click", function (event) {
-        if (event.target.classList.contains("add-artwork-btn")) {
-            const image = prompt("Ingrese la URL de la imagen:");
-            if (image) {
-                const artworks = JSON.parse(localStorage.getItem("artworks")) || [];
-                artworks.push({ image });
-                localStorage.setItem("artworks", JSON.stringify(artworks));
-                renderGallery();
-            }
+    const addArtworkBtn = document.getElementById("add-artwork-btn");
+    addArtworkBtn.addEventListener("click", function () {
+        const image = prompt("Ingrese la URL de la imagen:");
+        if (image) {
+            const artworks = JSON.parse(localStorage.getItem("artworks")) || [];
+            artworks.push({ image });
+            localStorage.setItem("artworks", JSON.stringify(artworks));
+            renderGallery();
         }
     });
 });
