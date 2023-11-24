@@ -20,7 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     renderGallery();
 
-    document.body.addEventListener("click", function (event) {
+    const button = document.getElementById("btnCargar");
+
+
+    document.button.addEventListener("click", function (event) {
         console.log('se detecta un click')
 
         if (event.target.classList.contains("add-artwork-btn")) {
