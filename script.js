@@ -15,6 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
             img.src = artwork.image;
             artworkDiv.appendChild(img);
 
+            const buyBtn = document.createElement("button");
+            buyBtn.innerText = "Comprar";
+            buyBtn.classList.add("buy-btn");
+            buyBtn.addEventListener("click", function () {
+                alert("¡Imagen comprada!");
+            });
+            artworkDiv.appendChild(buyBtn);
+
             gallery.appendChild(artworkDiv);
         });
     }
